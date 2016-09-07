@@ -2,35 +2,44 @@ package com.stanleygriggs.myappportfolio;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 
 public class portfolio extends Activity {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    private Button button;
+
+    public void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_portfolio);
+
     }
 
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.portfolio, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
+    public void onBtnClicked(View v) {
+        switch (v.getId()) {
+            case R.id.button:
+                Toast.makeText(getApplicationContext(), "Popular Movies was clicked", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.button2:
+                Toast.makeText(getApplicationContext(),"Stock Hawk was clicked", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.button3:
+                Toast.makeText(getApplicationContext(), "Build it Bigger was clicked", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.button4:
+                Toast.makeText(getApplicationContext(),"Make Your App Material was clicked", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.button5:
+                Toast.makeText(getApplicationContext(), "Go Ubiquitous was clicked", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.button6:
+                Toast.makeText(getApplicationContext(),"Capstone was clicked", Toast.LENGTH_SHORT).show();
+                break;
+            default:
+                break;
         }
-        return super.onOptionsItemSelected(item);
     }
 }
